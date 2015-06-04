@@ -8,7 +8,7 @@ Contacts.model = function () {
 
 Contacts.controller = function () {
   var ctrl = this;
-  // Controller code goes here
+  ctrl.contacts = m.prop([new Contacts.model()])
 }
 
 Contacts.view = function (ctrl) {
