@@ -12,5 +12,14 @@ Contacts.controller = function () {
 }
 
 Contacts.view = function (ctrl) {
-  // View code goes here
+  return m('.contacts', [
+    m('h3', 'Enter your info'),
+    ctrl.contacts().map(function (contact, index) {
+      return m('.contact', [
+        m('p', 'Attendee #' + (index+1)),
+        m('input[type=text]', { value: contact.name() }),
+        m('input[type=text]', { value: contact.email() })
+      ])
+    })
+  ])
 }
